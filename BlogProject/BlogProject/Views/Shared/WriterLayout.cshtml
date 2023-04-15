@@ -1,0 +1,120 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Purple Admin</title>
+    <!-- plugins:css -->
+    <link rel="stylesheet" href="~/writer/assets/vendors/mdi/css/materialdesignicons.min.css">
+    <link rel="stylesheet" href="~/writer/assets/vendors/css/vendor.bundle.base.css">
+    <!-- endinject -->
+    <!-- Plugin css for this page -->
+    <!-- End plugin css for this page -->
+    <!-- inject:css -->
+    <!-- endinject -->
+    <!-- Layout styles -->
+    <link rel="stylesheet" href="~/writer/assets/css/style.css">
+    <!-- End layout styles -->
+    <link rel="shortcut icon" href="~/writer/assets/images/favicon.ico" />
+</head>
+<body>
+    <div class="container-scroller">
+        @await Html.PartialAsync("~/Views/Writer/WriterNavbarPartial.cshtml")
+        <div class="container-fluid page-body-wrapper">
+            <!-- partial:../../partials/_sidebar.html -->
+            <nav class="sidebar sidebar-offcanvas" id="sidebar">
+                <ul class="nav">
+                    <li class="nav-item nav-profile">
+                        <a href="#" class="nav-link">
+                            <div class="nav-profile-image">
+                                <img src="~/writer/assets/images/faces/face1.jpg" alt="profile">
+                                <span class="login-status online"></span>
+                                <!--change to offline or busy as needed-->
+                            </div>
+                            <div class="nav-profile-text d-flex flex-column">
+                                <span class="font-weight-bold mb-2">Yazarın Adı Soyadı</span>
+                                <span class="text-secondary text-small">Bilgisayar Mühendisi</span>
+                            </div>
+                            <i class="mdi mdi-bookmark-check text-success nav-profile-badge"></i>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/Dashboard/Index/">
+                            <span class="menu-title">Dashboard</span>
+                            <i class="mdi mdi-home menu-icon"></i>
+                        </a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a class="nav-link" href="/Writer/WriterEditProfile/">
+                            <span class="menu-title">Profilim</span>
+                            <i class="mdi mdi-contacts menu-icon"></i>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/Blog/GetBlogsByWriter/">
+                            <span class="menu-title">Bloglarım</span>
+                            <i class="mdi mdi-format-list-bulleted menu-icon"></i>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/Blog/AddBlog/">
+                            <span class="menu-title">Yeni Blog</span>
+                            <i class="mdi mdi-chart-bar menu-icon"></i>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/Message/GetAllMessages/">
+                            <span class="menu-title">Mesajlar</span>
+                            <i class="mdi mdi-message menu-icon"></i>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/Notification/GetAllNotification/">
+                            <span class="menu-title">Bildirimler</span>
+                            <i class="mdi mdi-bell-ring menu-icon"></i>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../../pages/tables/basic-table.html">
+                            <span class="menu-title">Siteye Git</span>
+                            <i class="mdi mdi-car  menu-icon"></i>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../../pages/tables/basic-table.html">
+                            <span class="menu-title">Ayarlar</span>
+                            <i class="mdi mdi-settings menu-icon"></i>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../../pages/tables/basic-table.html">
+                            <span class="menu-title">Çıkış Yap</span>
+                            <i class="mdi mdi-logout-variant menu-icon"></i>
+                        </a>
+                    </li>
+                    
+                </ul>
+            </nav>
+            <div class="main-panel">
+                <div class="content-wrapper">
+                    @RenderBody()
+                </div>
+                @await Html.PartialAsync("~/Views/Writer/WriterFooterPartial.cshtml")
+            </div>
+      
+        </div>
+        <!-- page-body-wrapper ends -->
+    </div>
+    <script src="~/writer/assets/vendors/js/vendor.bundle.base.js"></script>
+    <script src="~/writer/assets/js/off-canvas.js"></script>
+    <script src="~/writer/assets/js/hoverable-collapse.js"></script>
+    <script src="~/writer/assets/js/misc.js"></script>
+</body>
+</html>

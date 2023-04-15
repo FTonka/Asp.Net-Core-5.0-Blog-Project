@@ -1,0 +1,27 @@
+﻿@model EntityLayer.Concrete.Blog
+@{
+    ViewData["Title"] = "AddBlog";
+    Layout = "~/Views/Shared/WriterLayout.cshtml";
+}
+
+<form asp-action="AddBlog" asp-controller="Blog" method="post">
+			<label for="validationCustom01">Blog Başlığı</label>
+			<input type="text" class="form-control" asp-for="BlogTitle">
+			<span asp-validation-for="BlogTitle" class="text-danger"></span>
+		
+		<br />
+			<label for="validationCustom02">Blog Resim Yolu</label>
+			<input type="text" class="form-control" asp-for="Image">
+			<span asp-validation-for="Image" class="text-danger"></span>
+			<br />
+			<label for="validationCustom02">Kategori</label>
+			@Html.DropDownListFor(x=>x.CategoryID,(List<SelectListItem>)ViewBag.cav,new {@class="form-control"})
+			<span asp-validation-for="CategoryID" class="text-danger"></span>
+			<br />
+			<label for="validationCustom02">Blog İçeriği</label>
+			<textarea asp-for="BlogContent" class="form-control"></textarea>
+			<span asp-validation-for="BlogContent" class="text-danger"></span>
+
+	<button type="submit" class="btn btn-primary submit mb-4">Blogu Ekle</button>
+
+</form>
